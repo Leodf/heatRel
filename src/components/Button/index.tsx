@@ -1,12 +1,22 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Container, ButtonText } from "./styles";
+import { TouchableOpacityProps } from "react-native";
 
-import { Container } from "./styles";
+interface ButtonProps extends TouchableOpacityProps {
+  title: string;
+  onPress: () => void;
+  isLoading?: boolean;
+}
 
-export default function Button() {
+export default function Button({
+  title,
+  onPress,
+  isLoading = false,
+  ...props
+}: ButtonProps) {
   return (
-    <Container>
-      <Text>Button</Text>
+    <Container {...props}>
+      <ButtonText>{title}</ButtonText>
     </Container>
   );
 }

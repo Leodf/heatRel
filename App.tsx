@@ -9,8 +9,7 @@ import React, { useCallback } from "react";
 import { StatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";
 import * as SplashScreen from "expo-splash-screen";
-import Home from "./src/screens/Home";
-import { dark } from "./src/theme";
+import theme from "./src/config/theme";
 import Routes from "./src/routes";
 
 export default function App() {
@@ -30,7 +29,7 @@ export default function App() {
     return null;
   }
   return (
-    <ThemeProvider theme={dark}>
+    <ThemeProvider theme={theme}>
       <StatusBar style="dark" translucent backgroundColor="transparent" />
       <Routes />
     </ThemeProvider>
